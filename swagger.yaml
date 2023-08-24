@@ -1,0 +1,295 @@
+openapi: 3.1.0
+info:
+  title: Truffle
+  description: |-
+    Truffle API based on this spec: [https://docs.google.com/document/d/1Quf4mArWDa0-fqe8_39nMxL01D9y3pNhxyU5AqpVsn4/edit]
+  version: 1.0.0
+servers:
+  - url: https://api.truffle.com/
+  - url: https://api.truffledev.com/
+tags:
+  - name: KDS
+    description: API for sending order to the kitchen display system
+    externalDocs:
+      description: KDS specification
+      url: https://docs.google.com/document/d/1Quf4mArWDa0-fqe8_39nMxL01D9y3pNhxyU5AqpVsn4/edit
+paths:
+  /kds_order_center/api/orders:
+    post:
+      tags:
+        - KDS
+      summary: Post an order to the KDS
+      description: Sends an order to the kitchen to be prepared.
+      operationId: createOrder
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/KdsOrder'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/KdsOrderResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+                example: {
+                  "code": 500,
+                  "message": "restaurant id does not exist"
+                }
+      security:
+        - bearerAuth: []
+components:
+  schemas:
+    KdsOrder:
+      type: object
+      properties:
+        restaurant_id:
+          description: The unique identifier of the restaurant.
+          type: integer
+          format: int64
+          example: 10
+        customer_name:
+          description: The name of the customer placing the order.
+          type: string
+          example: John Doe
+          nullable: true
+        customer_number:
+          description: The customer's phone number.
+          type: string
+          nullable: true
+        pickupdate:
+          description: The date for picking up the order in YYYY-MM-DD format. Can be sent as blank or with Ordered Date
+          type: string
+          format: date
+          example: "2023-10-01"
+          nullable: true
+        pickuptime:
+          description: The time for picking up the order in HH:MM:SS format. Can be sent as blank or with Ordered Time
+          type: string
+          format: time
+          example: "12:00:00"
+          nullable: true
+        customer_country_code:
+          description: The country code of the customer's phone number. This will be +1 for Canada & USA
+          type: string
+          example: "+1"
+          nullable: true
+        customer_email:
+          description: The email address of the customer.
+          type: string
+          format: email
+          example: john.doe@fake.com
+          nullable: true
+        order_date:
+          description: The date and time when the order was placed in YYYY-MM-DD HH:MM:SS format.
+          type: string
+          format: date-time
+          example: "2023-10-01 12:00:00"
+        due_date:
+          description: The date and time when the order is due in YYYY-MM-DD HH:MM:SS format. This is used for future orders if not using future ordering, then order date and due date will be the same. If not needed send blank.
+          type: string
+          format: date-time
+          example: "2023-10-01 12:00:00"
+          nullable: true
+        order_item:
+          description: An array of order items.
+          type: array
+          items:
+            $ref: '#/components/schemas/KdsOrderItem'
+      required:
+        - restaurant_id
+        - order_date
+        - order_item
+      example: {
+        "restaurant_id": "544",
+        "customer_name": "john",
+        "customer_number": "1234567890",
+        "pickupdate": "2023-08-21",
+        "pickuptime": "22:49:43",
+        "customer_country_code": "+1",
+        "customer_email": "abc@gmail.com",
+        "order_date": "2023-08-21 22:49:43",
+        "due_date": "2023-08-21 22:49:43",
+        "order_item": [
+          {
+            "menu_name": "Test Menu 1",
+            "category_name": "Test Category 1",
+            "sub_category_name": "Test Sub Category 1",
+            "item_note": "Make it spicy",
+            "menu_size": "Small",
+            "menu_quantity": "2",
+            "modifiers": [
+              {
+                "modifier_group_name": "Modifier Group 1",
+                "modifier_name": "Tomato",
+                "modifier_type": "Full",
+                "quantity": "2"
+              },
+              {
+                "modifier_group_name": "Modifier Group 1",
+                "modifier_name": "Cheese",
+                "modifier_type": "Left",
+                "quantity": "2"
+              },
+              {
+                "modifier_group_name": "Modifier Group 2",
+                "modifier_name": "Butter",
+                "modifier_type": "Right",
+                "quantity": "4"
+              }
+            ]
+          },
+          {
+
+
+            "menu_name": "Test Menu 2",
+            "category_name": "Test Category 1",
+            "sub_category_name": "Test Sub Category 1",
+            "item_note": "",
+            "menu_size": "Large",
+            "menu_quantity": "3",
+            "modifiers": [
+              {
+                "modifier_group_name": "Modifier Group 1",
+                "modifier_name": "Tomato",
+                "modifier_type": "Full",
+                "quantity": "2"
+              },
+              {
+                "modifier_group_name": "Modifier Group 2",
+                "modifier_name": "Cheese",
+                "modifier_type": "Left",
+                "quantity": "2"
+              },
+              {
+                "modifier_group_name": "Modifier Group 2",
+                "modifier_name": "Butter",
+                "modifier_type": "Right",
+                "quantity": "4"
+              }
+            ]
+          },
+          {
+            "menu_name": "Test Menu 3",
+            "category_name": "Test Category 3",
+            "sub_category_name": "Test Sub Category 3",
+            "item_note": "Make it normal",
+            "menu_size": "Medium",
+            "menu_quantity": "1",
+            "modifiers": [
+
+            ]
+          }
+        ]
+      }
+    KdsOrderItem:
+      type: object
+      properties:
+        menu_name:
+          description: Name of the menu item.
+          type: string
+          example: Footlong Hot Dog
+        category_name:
+          description: The category of the menu item.
+          type: string
+          example: Hot Food
+        sub_category_name:
+          description: The subcategory of the menu item.
+          type: string
+          example: Hot Dogs
+          nullable: true
+        item_note:
+          description: Any special notes or instructions for preparing the item.
+          type: string
+          example: No onions
+          nullable: true
+        menu_size:
+          description: The size of the menu item (e.g. small, medium, large).
+          type: string
+          example: Large
+          nullable: true
+        menu_quantity:
+          description: The quantity of the menu item ordered.
+          type: integer
+          format: int32
+          example: 2
+        modifiers:
+          description: An array of modifiers for the menu item.
+          type: array
+          nullable: true
+          items:
+            $ref: '#/components/schemas/Modifier'
+      required:
+        - menu_name
+        - category_name
+        - menu_quantity
+    Modifier:
+      type: object
+      properties:
+        modifier_group_name:
+          description: The name of the modifier group.
+          type: string
+          example: Toppings
+        modifier_name:
+          description: The name of the modifier.
+          type: string
+          example: Ketchup
+        modifier_type:
+          description: We use this to This is to display any specifics about the modifier, For example Pizza topping if it should go on Full, Left, Right for example.
+          type: string
+          enum:
+            - Full
+            - Left
+            - Right
+        quantity:
+          type: number
+          format: int32
+          example: 4
+    KdsOrderResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+          example: 200
+        message:
+          type: string
+          example: success
+        order_id:
+          type: string
+          example: 123456
+      required:
+        - code
+        - message
+        - order_id
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+          example: 400
+        message:
+          type: string
+          example: failed
+      required:
+        - code
+        - message
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

@@ -1,0 +1,49 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  buildSdk:
+    name: Build SDK
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 6.0.x
+      - name: Install Yardarm
+        run: dotnet tool install --global --version 0.3.7 Yardarm.CommandLine
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0.9.15
+        with:
+          versionSpec: "5.8.1"
+
+      - name: Determine Version
+        id: gitversion
+        uses: gittools/actions/gitversion/execute@v0.9.15
+        with:
+          useConfigFile: true
+          configFilePath: "GitVersion.yml"
+
+      - name: Set Version
+        run: sed -i 's/0.0.0-replace/${{ steps.gitversion.outputs.legacySemVerPadded }}/g' swagger.json
+
+      - name: Build
+        run: yardarm generate -i ./swagger.yaml --nupkg ./dist/ -n CenterEdge.TruffleApi -v ${{ steps.gitversion.outputs.nuGetVersionV2 }} -x Yardarm.SystemTextJson Yardarm.MicrosoftExtensionsHttp --repository-url https://github.com/${GITHUB_REPOSITORY}.git --repository-commit ${GITHUB_SHA} --embed -f netstandard2.0 net6.0
+
+      - name: Push
+        working-directory: ./dist
+        # Publish CI packages from PRs and tagged releases
+        if: ${{ startsWith(github.ref, 'refs/tags/') || startsWith(github.ref, 'refs/pull/') }}
+        run: >-
+          dotnet nuget add source --username USERNAME --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github https://nuget.pkg.github.com/CenterEdge/index.json
+          && dotnet nuget push **/*.${{ steps.gitversion.outputs.nuGetVersionV2  }}.nupkg -k ${{ secrets.GITHUB_TOKEN  }} -s github
