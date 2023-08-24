@@ -35,7 +35,7 @@ jobs:
           configFilePath: "GitVersion.yml"
 
       - name: Set Version
-        run: sed -i 's/0.0.0-replace/${{ steps.gitversion.outputs.legacySemVerPadded }}/g' swagger.json
+        run: sed -i 's/0.0.0-replace/${{ steps.gitversion.outputs.legacySemVerPadded }}/g' swagger.yaml
 
       - name: Build
         run: yardarm generate -i ./swagger.yaml --nupkg ./dist/ -n CenterEdge.TruffleApi -v ${{ steps.gitversion.outputs.nuGetVersionV2 }} -x Yardarm.SystemTextJson Yardarm.MicrosoftExtensionsHttp --repository-url https://github.com/${GITHUB_REPOSITORY}.git --repository-commit ${GITHUB_SHA} --embed -f netstandard2.0 net6.0

@@ -3,7 +3,7 @@ info:
   title: Truffle
   description: |-
     Truffle API based on this spec: [https://docs.google.com/document/d/1Quf4mArWDa0-fqe8_39nMxL01D9y3pNhxyU5AqpVsn4/edit]
-  version: 1.0.0
+  version: 0.0.0-replace
 servers:
   - url: https://api.truffle.com/
   - url: https://api.truffledev.com/
