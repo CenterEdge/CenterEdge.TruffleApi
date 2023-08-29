@@ -21,7 +21,7 @@ jobs:
         with:
           dotnet-version: 6.0.x
       - name: Install Yardarm
-        run: dotnet tool install --global --version 0.3.7 Yardarm.CommandLine
+        run: dotnet tool install --global --version 0.4.0 Yardarm.CommandLine
       - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v0.10.2
         with:
