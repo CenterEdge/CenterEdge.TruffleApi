@@ -14,7 +14,7 @@ tags:
       description: KDS specification
       url: https://docs.google.com/document/d/1Quf4mArWDa0-fqe8_39nMxL01D9y3pNhxyU5AqpVsn4/edit
 paths:
-  /kds_order_center/api/orders:
+  /kds_order_center:
     post:
       tags:
         - KDS
@@ -99,6 +99,11 @@ components:
           type: string
           format: date-time
           example: "2023-10-01 12:00:00"
+        table_number:
+          description: "Indicates the table # for the particular order."
+          type: string
+          example: "5"
+          nullable: true
         due_date:
           description: The date and time when the order is due in YYYY-MM-DD HH:MM:SS format. This is used for future orders if not using future ordering, then order date and due date will be the same. If not needed send blank.
           type: string
@@ -115,7 +120,7 @@ components:
         - order_date
         - order_item
       example: {
-        "restaurant_id": "544",
+        "restaurant_id": 544,
         "customer_name": "john",
         "customer_number": "1234567890",
         "pickupdate": "2023-08-21",
@@ -123,6 +128,7 @@ components:
         "customer_country_code": "+1",
         "customer_email": "abc@gmail.com",
         "order_date": "2023-08-21 22:49:43",
+        "table_number": 5,
         "due_date": "2023-08-21 22:49:43",
         "order_item": [
           {
@@ -131,55 +137,55 @@ components:
             "sub_category_name": "Test Sub Category 1",
             "item_note": "Make it spicy",
             "menu_size": "Small",
-            "menu_quantity": "2",
+            "kds_printer_name": "KDS 1",
+            "menu_quantity": 2,
             "modifiers": [
               {
                 "modifier_group_name": "Modifier Group 1",
                 "modifier_name": "Tomato",
                 "modifier_type": "Full",
-                "quantity": "2"
+                "quantity": 2
               },
               {
                 "modifier_group_name": "Modifier Group 1",
                 "modifier_name": "Cheese",
                 "modifier_type": "Left",
-                "quantity": "2"
+                "quantity": 2
               },
               {
                 "modifier_group_name": "Modifier Group 2",
                 "modifier_name": "Butter",
                 "modifier_type": "Right",
-                "quantity": "4"
+                "quantity": 4
               }
             ]
           },
           {
-
-
             "menu_name": "Test Menu 2",
             "category_name": "Test Category 1",
             "sub_category_name": "Test Sub Category 1",
             "item_note": "",
             "menu_size": "Large",
-            "menu_quantity": "3",
+            "kds_printer_name": "KDS 2",
+            "menu_quantity": 3,
             "modifiers": [
               {
                 "modifier_group_name": "Modifier Group 1",
                 "modifier_name": "Tomato",
                 "modifier_type": "Full",
-                "quantity": "2"
+                "quantity": 2
               },
               {
                 "modifier_group_name": "Modifier Group 2",
                 "modifier_name": "Cheese",
                 "modifier_type": "Left",
-                "quantity": "2"
+                "quantity": 2
               },
               {
                 "modifier_group_name": "Modifier Group 2",
                 "modifier_name": "Butter",
                 "modifier_type": "Right",
-                "quantity": "4"
+                "quantity": 4
               }
             ]
           },
@@ -189,9 +195,9 @@ components:
             "sub_category_name": "Test Sub Category 3",
             "item_note": "Make it normal",
             "menu_size": "Medium",
-            "menu_quantity": "1",
+            "kds_printer_name": "KDS 3",
+            "menu_quantity": 1,
             "modifiers": [
-
             ]
           }
         ]
@@ -222,6 +228,10 @@ components:
           type: string
           example: Large
           nullable: true
+        kds_printer_name:
+          description: This will be the unique identifier for the KDS that is registered. Each KDS will have a unique name for example, KDS 1, KDS 2. You will send that as "KDS 1".
+          type: string
+          example: KDS 1
         menu_quantity:
           description: The quantity of the menu item ordered.
           type: integer
@@ -236,6 +246,7 @@ components:
       required:
         - menu_name
         - category_name
+        - kds_printer_name
         - menu_quantity
     Modifier:
       type: object
