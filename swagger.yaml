@@ -302,5 +302,6 @@ components:
         - message
   securitySchemes:
     bearerAuth:
-      type: http
-      scheme: bearer
+      type: apiKey
+      in: header
+      name: access_token
