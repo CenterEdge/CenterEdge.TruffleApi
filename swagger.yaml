@@ -142,19 +142,19 @@ components:
             "modifiers": [
               {
                 "modifier_group_name": "Modifier Group 1",
-                "modifier_name": "Tomato",
+                "modifire_name": "Tomato",
                 "modifier_type": "Full",
                 "quantity": 2
               },
               {
                 "modifier_group_name": "Modifier Group 1",
-                "modifier_name": "Cheese",
+                "modifire_name": "Cheese",
                 "modifier_type": "Left",
                 "quantity": 2
               },
               {
                 "modifier_group_name": "Modifier Group 2",
-                "modifier_name": "Butter",
+                "modifire_name": "Butter",
                 "modifier_type": "Right",
                 "quantity": 4
               }
@@ -171,19 +171,19 @@ components:
             "modifiers": [
               {
                 "modifier_group_name": "Modifier Group 1",
-                "modifier_name": "Tomato",
+                "modifire_name": "Tomato",
                 "modifier_type": "Full",
                 "quantity": 2
               },
               {
                 "modifier_group_name": "Modifier Group 2",
-                "modifier_name": "Cheese",
+                "modifire_name": "Cheese",
                 "modifier_type": "Left",
                 "quantity": 2
               },
               {
                 "modifier_group_name": "Modifier Group 2",
-                "modifier_name": "Butter",
+                "modifire_name": "Butter",
                 "modifier_type": "Right",
                 "quantity": 4
               }
@@ -255,7 +255,7 @@ components:
           description: The name of the modifier group.
           type: string
           example: Toppings
-        modifier_name:
+        modifire_name: # This misspelling is currently intentional to match the Truffle implementation
           description: The name of the modifier.
           type: string
           example: Ketchup
