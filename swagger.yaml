@@ -115,6 +115,8 @@ components:
           type: string
           example: This is a check note.
           nullable: true
+        order_type:
+          $ref: '#/components/schemas/OrderType'
         order_sub_type:
           $ref: '#/components/schemas/OrderSubType'
         order_item:
@@ -125,6 +127,7 @@ components:
       required:
         - restaurant_id
         - order_date
+        - order_type
         - order_item
       example: {
         "restaurant_id": 544,
@@ -211,6 +214,14 @@ components:
           }
         ]
       }
+    OrderType:
+      description: Type of the order.
+      type: string
+      enum:
+        - Take Away
+        - Dine In
+        - QSR
+        - Delivery
     OrderSubType:
       description: Sub-type of the order.
       type: string
