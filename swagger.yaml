@@ -331,4 +331,4 @@ components:
     bearerAuth:
       type: apiKey
       in: header
-      name: access_token
+      name: accesstoken
