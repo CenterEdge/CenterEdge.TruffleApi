@@ -57,6 +57,10 @@ components:
     KdsOrder:
       type: object
       properties:
+        order_id:
+          description: This is your system's Order/Transaction ID, this will appear on the KDS, Order Ready Screen, GoBox QR print. If field is sent without a value then Truffle will assign the order our internal order ID to the order.
+          type: string
+          nullable: true
         restaurant_id:
           description: The unique identifier of the restaurant.
           type: integer
