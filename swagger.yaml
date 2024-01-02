@@ -277,7 +277,7 @@ components:
         - category_name
         - kds_printer_name
         - menu_quantity
-    Modifier:
+    ModifierBase:
       type: object
       properties:
         modifier_group_name:
@@ -291,9 +291,43 @@ components:
         modifier_type:
           $ref: '#/components/schemas/ModifierType'
         quantity:
+          description: The quantity of the modifier applied.
           type: number
           format: int32
           example: 4
+      required:
+        - modifier_group_name
+        - modifire_name
+        - modifier_type
+        - quantity
+    Modifier:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/ModifierBase'
+      properties:
+        modifier_note:
+          description: This will show a note field under the modifier
+          type: string
+          example: "On the side"
+        sub_modifiers:
+          description: An Array of sub modifiers (nested) for a particular modifier
+          type: array
+          items:
+            $ref: '#/components/schemas/SubModifier'
+    SubModifier:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/ModifierBase'
+      properties:
+        sub_modifier_note:
+          description: This will show a note field under the modifier
+          type: string
+          example: "On the side"
+        sub_inner_modifiers:
+          description: An Array of sub modifiers (nested) for a particular modifier
+          type: array
+          items:
+            $ref: '#/components/schemas/SubModifier'
     ModifierType:
       description: We use this to This is to display any specifics about the modifier, For example Pizza topping if it should go on Full, Left, Right for example.
       type: string
@@ -301,6 +335,7 @@ components:
         - Full
         - Left
         - Right
+      default: Full
     KdsOrderResponse:
       type: object
       properties:
