@@ -21,15 +21,15 @@ jobs:
         with:
           dotnet-version: 6.0.x
       - name: Install Yardarm
-        run: dotnet tool install --global --version 0.4.0 Yardarm.CommandLine
+        run: dotnet tool install --global --version 0.4.1 Yardarm.CommandLine
       - name: Install GitVersion
-        uses: gittools/actions/gitversion/setup@v0.10.2
+        uses: gittools/actions/gitversion/setup@v0.11.0
         with:
-          versionSpec: "5.8.1"
+          versionSpec: "5.12.0"
 
       - name: Determine Version
         id: gitversion
-        uses: gittools/actions/gitversion/execute@v0.10.2
+        uses: gittools/actions/gitversion/execute@v0.11.0
         with:
           useConfigFile: true
           configFilePath: "GitVersion.yml"
@@ -41,7 +41,7 @@ jobs:
         run: yardarm generate -i ./swagger.yaml --nupkg ./dist/ -n CenterEdge.TruffleApi -v ${{ steps.gitversion.outputs.nuGetVersionV2 }} -x Yardarm.SystemTextJson Yardarm.MicrosoftExtensionsHttp --repository-url https://github.com/${GITHUB_REPOSITORY}.git --repository-commit ${GITHUB_SHA} --embed -f netstandard2.0 net6.0
 
       - name: Archive
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: packages
           path: ./dist
