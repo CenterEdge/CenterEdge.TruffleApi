@@ -309,6 +309,10 @@ components:
           description: This will show a note field under the modifier
           type: string
           example: "On the side"
+        prefix_type:
+          description: This will be your prefix for the modifier. You can send any text here and it will prefix the modifier.
+          type: string
+          example: "NO"
         sub_modifiers:
           description: An Array of sub modifiers (nested) for a particular modifier
           type: array
@@ -323,6 +327,10 @@ components:
           description: This will show a note field under the modifier
           type: string
           example: "On the side"
+        sub_modifier_prefix:
+          description: This will be your prefix for the modifier. You can send any text here and it will prefix the modifier.
+          type: string
+          example: "NO"
         sub_inner_modifiers:
           description: An Array of sub modifiers (nested) for a particular modifier
           type: array
