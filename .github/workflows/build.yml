@@ -23,13 +23,13 @@ jobs:
       - name: Install Yardarm
         run: dotnet tool install --global --version 0.4.1 Yardarm.CommandLine
       - name: Install GitVersion
-        uses: gittools/actions/gitversion/setup@v0.11.0
+        uses: gittools/actions/gitversion/setup@v0.13.6
         with:
           versionSpec: "5.12.0"
 
       - name: Determine Version
         id: gitversion
-        uses: gittools/actions/gitversion/execute@v0.11.0
+        uses: gittools/actions/gitversion/execute@v0.13.6
         with:
           useConfigFile: true
           configFilePath: "GitVersion.yml"
