@@ -119,6 +119,11 @@ components:
           type: string
           example: This is a check note.
           nullable: true
+        server_name:
+          description: The name of the server who took the order.
+          type: string
+          example: John D
+          nullable: true
         order_type:
           $ref: '#/components/schemas/OrderType'
         order_sub_type:
