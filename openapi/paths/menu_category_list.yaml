@@ -1,14 +1,14 @@
-post:
+get:
   tags:
     - KDS
-  summary: Post an order to the KDS
-  description: Sends an order to the kitchen to be prepared.
-  operationId: createOrder
+  summary: 
+  description: 
+  operationId: menuCategoryList
   requestBody:
     content:
       application/json:
         schema:
-          $ref: ../schemas/KdsOrder.yaml
+          $ref: '../schemas/MenuCategoryList.yaml'
     required: true
   responses:
     '200':
@@ -16,19 +16,19 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/KdsOrderResponse.yaml
+            $ref: '../schemas/MenuCategoryListResponse.yaml'
     '400':
       description: Bad Request
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/Error.yaml
+            $ref: '../schemas/Error.yaml'
     '500':
       description: Error
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/Error.yaml
+            $ref: '../schemas/Error.yaml'
             example: {
               "code": 500,
               "message": "restaurant id does not exist"

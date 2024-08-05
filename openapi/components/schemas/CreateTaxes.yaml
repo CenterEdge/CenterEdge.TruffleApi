@@ -1,0 +1,37 @@
+type: object
+properties:
+  restaurant_id:
+    description: The ID of the restaurant.
+    type: string
+    nullable: true
+  center_edge:
+    description: The CenterEdge ID of the item.
+    type: string
+    nullable: true
+  tax_name:
+    description: The name of the tax.
+    type: string
+    nullable: true
+  tax_type:
+    description: The type of tax
+    type: string
+    nullable: true
+  apply_to:
+    description: Always set to Item
+    type: string
+    nullable: true
+  tax_percentage:
+    description: The percentage of the tax.
+    type: string
+    nullable: true
+  tax_code:
+    description: The code for the tax.
+    type: string
+    nullable: true
+required:
+  - restaurant_id
+  - tax_name
+  - tax_type
+  - apply_to
+  - tax_percentage
+  - tax_code

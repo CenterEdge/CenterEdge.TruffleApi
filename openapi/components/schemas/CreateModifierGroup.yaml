@@ -1,0 +1,32 @@
+type: object
+properties:
+  restaurant_id:
+    description: The ID of the restaurant.
+    type: string
+    nullable: false
+  modifier_group_name:
+    description: The name of the modifier group.
+    type: string
+    nullable: false
+  min:
+    description: The minimum number of modifiers allowed.
+    type: string
+    nullable: false
+  max:
+    description: The maximum number of modifiers allowed.
+    type: string
+    nullable: false
+  free_modifier:
+    description: how many modifiers can they get for free in this group
+    type: string
+    nullable: true
+  modifier_name:
+    description: Comma seperated modifier names that belong in this group.
+    type: string
+    nullable: false
+required:
+  - restaurant_id
+  - modifier_group_name
+  - min
+  - max
+  - modifier_name

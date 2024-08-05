@@ -1,0 +1,14 @@
+type: object
+properties:
+  restaurant_id:
+    description: The ID of the restaurant.
+    type: string
+    nullable: true
+  serving_name:
+    description: The name of the serving
+    type: string
+    nullable: true
+  description:
+    description: Description of the serving.
+    type: string
+    nullable: true

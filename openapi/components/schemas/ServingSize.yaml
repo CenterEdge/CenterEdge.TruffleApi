@@ -1,0 +1,23 @@
+type: object
+properties:
+  name:
+    description: The name of the serving size.
+    type: string
+    nullable: false
+  serving_price:
+    description: The price of the serving size.
+    type: string
+    nullable: false
+  serving_cost:
+    description: The cost of the serving size.
+    type: string
+    nullable: false
+  serving_discount:
+    description: The discount of the serving size.
+    type: string
+    nullable: false
+required:
+  - name
+  - serving_price
+  - serving_cost
+  - serving_discount    

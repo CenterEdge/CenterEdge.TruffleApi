@@ -1,0 +1,26 @@
+type: object
+properties:
+  id:
+    description: The id of the modifier group.
+    type: integer
+    format: int32
+    nullable: false
+  modifier_name:
+    description: The name of modifier group.
+    type: string
+    nullable: false
+  tax_name:
+    description: The list of taxes for the item.
+    type: array
+    items:
+      type: string
+  kitchen_printer_array:
+    description: The kitchen printer the item is associated with.
+    type: array
+    items:
+      type: string
+required:
+  - id
+  - modifier_name
+  - tax_name
+  - kitchen_printer_array

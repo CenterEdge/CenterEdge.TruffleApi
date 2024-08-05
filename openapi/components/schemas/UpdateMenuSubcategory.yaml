@@ -1,0 +1,37 @@
+type: object
+properties:
+  restaurant_id:
+    description: The ID of the restaurant.
+    type: string
+    nullable: false
+  restaurant_branch_id:
+    description: The ID of the restaurant branch.
+    type: string
+    nullable: false
+  center_edge:
+    description: 
+    type: string
+    nullable: true
+  sub_category_id:
+    description: The ID of the subcategory.
+    type: string
+    nullable: false
+  sub_category_name:
+    description: The name of the subcategory.
+    type: string
+    nullable: false
+  kds_printer_name:
+    description: The name of the printer.
+    type: string
+    nullable: false
+  tax_name:
+    description: The name of the tax.
+    type: string
+    nullable: false
+required:
+  - restaurant_id
+  - restaurant_branch_id
+  - sub_category_id
+  - sub_category_name
+  - kds_printer_name
+  - tax_name

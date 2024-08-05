@@ -1,0 +1,22 @@
+type: object
+properties:
+  restaurant_id:
+    description: The ID of the restaurant.
+    type: string
+    nullable: false
+  sub_category_id:
+    description: The ID of the subcategory.
+    type: string
+    nullable: false
+  center_edge:
+    description: 
+    type: string
+    nullable: true    
+  hide_in_online:
+    description:
+    type: boolean
+    nullable: false
+required:
+  - restaurant_id
+  - sub_category_id
+  - hide_in_online

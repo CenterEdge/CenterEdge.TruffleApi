@@ -1,0 +1,52 @@
+type: object
+properties:
+  restaurant_id:
+    description: The ID of the restaurant for which the sub-category is being created.
+    type: string
+    nullable: false
+  center_edge:
+    description: The CenterEdge ID of the item.
+    type: string
+    nullable: true
+  category_name:
+    description: The name of the category to which the sub-category belongs.
+    type: string
+    nullable: false
+  include_tax:
+    description: Indicates whether tax is included.
+    type: string
+    nullable: true
+  sub_type_name:
+    description: The name of the sub-category.
+    type: string
+    nullable: false
+  include_kitchen_printers:
+    description: Indicates whether kitchen printers are included.
+    type: string
+    nullable: true
+  department_name:
+    description: The name of the department.
+    type: string
+    nullable: false
+  tax_name:
+    description: The name of the tax.
+    type: string
+    nullable: true
+  priority:
+    description: The priority of the sub-category.
+    type: string
+    nullable: true
+  serving_size_level:
+    description: "each"
+    type: string
+    nullable: false
+  kds_printer_name:
+    description: The name of the kitchen display system printer.
+    type: string
+    nullable: true
+required:
+  - restaurant_id
+  - category_name
+  - sub_type_name
+  - department_name
+  - serving_size_level

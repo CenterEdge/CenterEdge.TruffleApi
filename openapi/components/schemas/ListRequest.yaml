@@ -1,0 +1,25 @@
+type: object
+properties:
+  restaurant_id:
+    description: The ID of the restaurant.
+    type: string
+    nullable: false
+  restaurant_branch_id:
+    description: The ID of the restaurant branch.
+    type: string
+    nullable: false
+  page_no:
+    description: 
+    type: integer
+    format: int32
+    nullable: false    
+  limit:
+    description:
+    type: integer
+    format: int32
+    nullable: false
+required:
+  - restaurant_id
+  - restaurant_branch_id
+  - page_no
+  - limit

@@ -1,0 +1,72 @@
+type: object
+properties:
+  sub_category_name:
+    description: Name of the sub-category.
+    type: string
+    nullable: true
+  category_name:
+    description: Name of the category.
+    type: string
+    nullable: false
+  tax_name:
+    description: Name of the tax.
+    type: string
+    nullable: true
+  menu_serving_name:
+    description: "each"
+    type: string
+    nullable: false
+  kds_printer_name:
+    description: Name of the KDS printer.
+    type: string
+    nullable: true
+  restaurant_id:
+    description: ID of the restaurant.
+    type: string
+    nullable: false
+  menu_name:
+    description: Name of the menu.
+    type: string
+    nullable: false
+  include_tax:
+    description: Indicates whether tax is included.
+    type: string
+    nullable: true
+  level:
+    description: Will this item appear under Category or Sub Category
+    type: string
+    nullable: false
+  calories:
+    description: send as "0"
+    type: string
+    nullable: false
+  center_edge:
+    description:
+    type: string
+    nullable: false
+  is_pizza:
+    description: Indicates whether the menu item is a pizza.
+    type: string
+    nullable: true
+  price_type:
+    description: always send as "fixed"
+    type: string
+    nullable: false
+  description:
+    description: Description of the menu.
+    type: string
+    nullable: true
+  serving_size:
+    description: Array of serving size objects with name, serving_price, serving_cost, and serving_discount.
+    type: array
+    nullable: false
+required:
+  - category_name
+  - menu_serving_name
+  - restaurant_id
+  - menu_name
+  - level
+  - calories
+  - center_edge
+  - price_type
+  - serving_size
