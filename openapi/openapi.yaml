@@ -1,0 +1,24 @@
+openapi: 3.0.3
+info:
+  title: Truffle
+  description: |-
+    Truffle API based on this spec: [https://docs.google.com/document/d/1Quf4mArWDa0-fqe8_39nMxL01D9y3pNhxyU5AqpVsn4/edit]
+  version: 0.0.0-replace
+  license:
+    name: See license agreement
+servers:
+  - url: https://api.truffle.com
+  - url: https://api.truffledev.com
+tags:
+  - name: KDS
+    description: API for sending order to the kitchen display system
+    externalDocs:
+      description: KDS specification
+      url: https://docs.google.com/document/d/1Quf4mArWDa0-fqe8_39nMxL01D9y3pNhxyU5AqpVsn4/edit
+paths:
+  /kds_order_center:
+    $ref: ./paths/kds_order_center.yaml
+components:
+  securitySchemes:
+    bearerAuth:
+      $ref: ./components/securitySchemes/bearerAuth.yaml

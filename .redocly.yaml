@@ -1,0 +1,16 @@
+# See https://docs.redoc.ly/cli/configuration/ for more information.
+apis:
+  main@v1:
+    root: openapi/openapi.yaml
+extends:
+  - recommended
+rules:
+  info-license-url: off
+  no-server-example.com: off
+theme:
+  openapi:
+    htmlTemplate: ./docs/index.html
+    theme:
+      colors:
+        primary:
+          main: "#32329f"

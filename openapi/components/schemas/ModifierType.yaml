@@ -1,0 +1,7 @@
+description: We use this to This is to display any specifics about the modifier, For example Pizza topping if it should go on Full, Left, Right for example.
+type: string
+enum:
+  - Full
+  - Left
+  - Right
+default: Full
