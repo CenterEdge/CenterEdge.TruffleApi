@@ -8,7 +8,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: ../schemas/KdsOrder.yaml
+          $ref: '../componenets/schemas/KdsOrder.yaml'
     required: true
   responses:
     '200':
@@ -16,19 +16,19 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../schemas/KdsOrderResponse.yaml
+            $ref: '../componenets/schemas/KdsOrderResponse.yaml'
     '400':
       description: Bad Request
       content:
         application/json:
           schema:
-            $ref: ../schemas/Error.yaml
+            $ref: '../componenets/schemas/Error.yaml'
     '500':
       description: Error
       content:
         application/json:
           schema:
-            $ref: ../schemas/Error.yaml
+            $ref: '../componenets/schemas/Error.yaml'
             example: {
               "code": 500,
               "message": "restaurant id does not exist"
