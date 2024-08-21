@@ -16,19 +16,19 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/KdsOrderResponse.yaml
+            $ref: ../schemas/KdsOrderResponse.yaml
     '400':
       description: Bad Request
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/Error.yaml
+            $ref: ../schemas/Error.yaml
     '500':
       description: Error
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/Error.yaml
+            $ref: ../schemas/Error.yaml
             example: {
               "code": 500,
               "message": "restaurant id does not exist"
