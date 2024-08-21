@@ -1,0 +1,16 @@
+type: object
+properties:
+  code:
+    type: integer
+    format: int32
+    example: 200
+  message:
+    type: string
+    example: success
+  order_id:
+    type: string
+    example: 123456
+required:
+  - code
+  - message
+  - order_id

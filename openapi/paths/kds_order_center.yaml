@@ -1,0 +1,37 @@
+post:
+  tags:
+    - KDS
+  summary: Post an order to the KDS
+  description: Sends an order to the kitchen to be prepared.
+  operationId: createOrder
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/KdsOrder.yaml
+    required: true
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/KdsOrderResponse.yaml
+    '400':
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Error.yaml
+    '500':
+      description: Error
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Error.yaml
+            example: {
+              "code": 500,
+              "message": "restaurant id does not exist"
+            }
+  security:
+    - bearerAuth: []

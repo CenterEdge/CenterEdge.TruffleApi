@@ -1,0 +1,22 @@
+type: object
+properties:
+  modifier_group_name:
+    description: The name of the modifier group.
+    type: string
+    example: Toppings
+  modifire_name: # This misspelling is currently intentional to match the Truffle implementation
+    description: The name of the modifier.
+    type: string
+    example: Ketchup
+  modifier_type:
+    $ref: ./ModifierType.yaml
+  quantity:
+    description: The quantity of the modifier applied.
+    type: number
+    format: int32
+    example: 4
+required:
+  - modifier_group_name
+  - modifire_name
+  - modifier_type
+  - quantity

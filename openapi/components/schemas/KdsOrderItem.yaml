@@ -1,0 +1,45 @@
+type: object
+properties:
+  menu_name:
+    description: Name of the menu item.
+    type: string
+    example: Footlong Hot Dog
+  category_name:
+    description: The category of the menu item.
+    type: string
+    example: Hot Food
+  sub_category_name:
+    description: The subcategory of the menu item.
+    type: string
+    example: Hot Dogs
+    nullable: true
+  item_note:
+    description: Any special notes or instructions for preparing the item.
+    type: string
+    example: No onions
+    nullable: true
+  menu_size:
+    description: The size of the menu item (e.g. small, medium, large).
+    type: string
+    example: Large
+    nullable: true
+  kds_printer_name:
+    description: This will be the unique identifier for the KDS that is registered. Each KDS will have a unique name for example, KDS 1, KDS 2. You will send that as "KDS 1".
+    type: string
+    example: KDS 1
+  menu_quantity:
+    description: The quantity of the menu item ordered.
+    type: integer
+    format: int32
+    example: 2
+  modifiers:
+    description: An array of modifiers for the menu item.
+    type: array
+    nullable: true
+    items:
+      $ref: ./Modifier.yaml
+required:
+  - menu_name
+  - category_name
+  - kds_printer_name
+  - menu_quantity

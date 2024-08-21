@@ -1,0 +1,4 @@
+description: Sub-type of the order.
+type: string
+enum:
+  - togo

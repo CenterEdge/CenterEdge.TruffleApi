@@ -1,0 +1,168 @@
+type: object
+properties:
+  order_id:
+    description: This is your system's Order/Transaction ID, this will appear on the KDS, Order Ready Screen, GoBox QR print. If field is sent without a value then Truffle will assign the order our internal order ID to the order.
+    type: string
+    nullable: true
+  restaurant_id:
+    description: The unique identifier of the restaurant.
+    type: integer
+    format: int64
+    example: 10
+  customer_name:
+    description: The name of the customer placing the order.
+    type: string
+    example: John Doe
+    nullable: true
+  customer_number:
+    description: The customer's phone number.
+    type: string
+    nullable: true
+  pickupdate:
+    description: The date for picking up the order in YYYY-MM-DD format. Can be sent as blank or with Ordered Date
+    type: string
+    format: date
+    example: "2023-10-01"
+    nullable: true
+  pickuptime:
+    description: The time for picking up the order in HH:MM:SS format. Can be sent as blank or with Ordered Time
+    type: string
+    format: partial-time
+    example: "12:00:00"
+    nullable: true
+  customer_country_code:
+    description: The country code of the customer's phone number. This will be +1 for Canada & USA
+    type: string
+    example: "+1"
+    nullable: true
+  customer_email:
+    description: The email address of the customer.
+    type: string
+    format: email
+    example: john.doe@fake.com
+    nullable: true
+  order_date:
+    description: The date and time when the order was placed in YYYY-MM-DD HH:MM:SS format.
+    type: string
+    pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}$
+    example: "2023-10-01 12:00:00"
+  table_number:
+    description: "Indicates the table # for the particular order."
+    type: string
+    example: "5"
+    nullable: true
+  due_date:
+    description: The date and time when the order is due in YYYY-MM-DD HH:MM:SS format. This is used for future orders if not using future ordering, then order date and due date will be the same. If not needed send blank.
+    type: string
+    pattern: ^[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}$
+    example: "2023-10-01 12:00:00"
+    nullable: true
+  check_note:
+    description: Any special notes or instructions for the order.
+    type: string
+    example: This is a check note.
+    nullable: true
+  server_name:
+    description: The name of the server who took the order.
+    type: string
+    example: John D
+    nullable: true
+  order_type:
+    $ref: ./OrderType.yaml
+  order_sub_type:
+    $ref: ./OrderSubType.yaml
+  order_item:
+    description: An array of order items.
+    type: array
+    items:
+      $ref: ./KdsOrderItem.yaml
+required:
+  - restaurant_id
+  - order_date
+  - order_type
+  - order_item
+example: {
+  "restaurant_id": 544,
+  "customer_name": "john",
+  "customer_number": "1234567890",
+  "pickupdate": "2023-08-21",
+  "pickuptime": "22:49:43",
+  "customer_country_code": "+1",
+  "customer_email": "abc@gmail.com",
+  "order_date": "2023-08-21 22:49:43",
+  "table_number": 5,
+  "due_date": "2023-08-21 22:49:43",
+  "check_note": "This is a check note",
+  "order_sub_type": "togo",
+  "order_item": [
+    {
+      "menu_name": "Test Menu 1",
+      "category_name": "Test Category 1",
+      "sub_category_name": "Test Sub Category 1",
+      "item_note": "Make it spicy",
+      "menu_size": "Small",
+      "kds_printer_name": "KDS 1",
+      "menu_quantity": 2,
+      "modifiers": [
+        {
+          "modifier_group_name": "Modifier Group 1",
+          "modifire_name": "Tomato",
+          "modifier_type": "Full",
+          "quantity": 2
+        },
+        {
+          "modifier_group_name": "Modifier Group 1",
+          "modifire_name": "Cheese",
+          "modifier_type": "Left",
+          "quantity": 2
+        },
+        {
+          "modifier_group_name": "Modifier Group 2",
+          "modifire_name": "Butter",
+          "modifier_type": "Right",
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "menu_name": "Test Menu 2",
+      "category_name": "Test Category 1",
+      "sub_category_name": "Test Sub Category 1",
+      "item_note": "",
+      "menu_size": "Large",
+      "kds_printer_name": "KDS 2",
+      "menu_quantity": 3,
+      "modifiers": [
+        {
+          "modifier_group_name": "Modifier Group 1",
+          "modifire_name": "Tomato",
+          "modifier_type": "Full",
+          "quantity": 2
+        },
+        {
+          "modifier_group_name": "Modifier Group 2",
+          "modifire_name": "Cheese",
+          "modifier_type": "Left",
+          "quantity": 2
+        },
+        {
+          "modifier_group_name": "Modifier Group 2",
+          "modifire_name": "Butter",
+          "modifier_type": "Right",
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "menu_name": "Test Menu 3",
+      "category_name": "Test Category 3",
+      "sub_category_name": "Test Sub Category 3",
+      "item_note": "Make it normal",
+      "menu_size": "Medium",
+      "kds_printer_name": "KDS 3",
+      "menu_quantity": 1,
+      "modifiers": [
+      ]
+    }
+  ]
+}

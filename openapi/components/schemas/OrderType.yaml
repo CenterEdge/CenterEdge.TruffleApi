@@ -1,0 +1,7 @@
+description: Type of the order.
+type: string
+enum:
+  - Take Away
+  - Dine In
+  - QSR
+  - Delivery

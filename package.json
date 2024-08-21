@@ -1,0 +1,13 @@
+{
+    "name": "centeredge-truffle-api",
+    "version": "1.0.0",
+    "dependencies": {
+      "@redocly/cli": "^1.11.0"
+    },
+    "private": true,
+    "scripts": {
+      "start": "openapi preview-docs",
+      "build": "openapi bundle -o dist/centeredge-truffleapi.yaml && openapi build-docs dist/centeredge-truffleapi.yaml -o dist/centeredge-truffleapi.html",
+      "test": "openapi lint"
+    }
+  }
