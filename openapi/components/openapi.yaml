@@ -1,0 +1,70 @@
+openapi: 3.0.3
+info:
+  title: Truffle
+  description: |-
+    Truffle API based on this spec: [https://docs.google.com/document/d/1Quf4mArWDa0-fqe8_39nMxL01D9y3pNhxyU5AqpVsn4/edit]
+  version: 0.0.0-replace
+  license:
+    name: See license agreement
+servers:
+  - url: https://api.truffle.com
+  - url: https://api.truffledev.com
+tags:
+  - name: KDS
+    description: API for sending order to the kitchen display system
+    externalDocs:
+      description: KDS specification
+      url: https://docs.google.com/document/d/1Quf4mArWDa0-fqe8_39nMxL01D9y3pNhxyU5AqpVsn4/edit
+paths:
+  /departmentapi:
+    $ref: ./paths/createDepartment.yaml
+  /servicesizeapi:
+    $ref: ./paths/createServingSize.yaml
+  /taxesapi:
+    $ref: ./paths/createTaxes.yaml
+  /menu_categoryapi:
+    $ref: ./paths/createMenuCategory.yaml
+  /menu_sub_categoryapi:
+    $ref: ./paths/createMenuSubCategory.yaml
+  /menu_api_center_edge:
+    $ref: ./paths/createMenu.yaml
+  /modifier_group_api:
+    $ref: ./paths/createModifierGroup.yaml
+  /modifier_api:
+    $ref: ./paths/createModifier.yaml
+  /hide_menu:
+    $ref: ./paths/hideMenu.yaml
+  /hide_category:
+    $ref: ./paths/hideCategory.yaml
+  /hide_subcategory:
+    $ref: ./paths/hideSubcategory.yaml
+  /hide_modifiergroup:
+    $ref: ./paths/hideModifierGroup.yaml
+  /hide_modifier:
+    $ref: ./paths/hideModifier.yaml
+  /update_menu_api:
+    $ref: ./paths/updateMenu.yaml
+  /update_modifiergroup:
+    $ref: ./paths/updateModifierGroup.yaml
+  /update_modifier:
+    $ref: ./paths/updateModifier.yaml
+  /update_menu_subcategory:
+    $ref: ./paths/updateMenuSubcategory.yaml
+  /update_menu_Category:
+    $ref: ./paths/updateMenuCategory.yaml
+  /menu_category_list:
+    $ref: ./paths/MenuCategoryList.yaml
+  /menu_sub_category_list:
+    $ref: ./paths/menuSubcategoryList.yaml
+  /menu_list:
+    $ref: ./paths/menuList.yaml
+  /modifireList:
+    $ref: ./paths/modifierList.yaml
+  /modifiregroupList:
+    $ref: ./paths/modifierGroupList.yaml
+  /kds_order_center:
+    $ref: ./paths/kds_order_center.yaml
+components:
+  securitySchemes:
+    bearerAuth:
+      $ref: ./components/securitySchemes/bearerAuth.yaml

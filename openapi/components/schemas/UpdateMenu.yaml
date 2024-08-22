@@ -1,0 +1,78 @@
+type: object
+properties:
+  sub_category_name:
+    description: The name of the sub category.
+    type: string
+    nullable: false
+  category_name:
+    description: The name of the category.
+    type: string
+    nullable: false
+  tax_name:
+    description: The name of the tax.
+    type: string
+    nullable: false
+  menu_serving_name:
+    description: The name of the menu serving.
+    type: string
+    nullable: false
+  kds_printer_name:
+    description: The name of the printer.
+    type: string
+    nullable: false
+  restaurant_id:
+    description: The ID of the restaurant.
+    type: string
+    nullable: false
+  menu_name:
+    description: 
+    type: string
+    nullable: false
+  include_tax:
+    description: 
+    type: string
+    nullable: false
+  level:
+    description: 
+    type: string
+    nullable: false
+  calories:
+    description: 
+    type: string
+    nullable: false    
+  center_edge:
+    description: 
+    type: string
+    nullable: true 
+  is_pizza:
+    description: 
+    type: string
+    nullable: false
+  price_type:
+    description: 
+    type: string
+    nullable: false
+  description:
+    description: The description of the menu.
+    type: string
+    nullable: false
+  serving_size:
+    description: List of serving sizes.
+    type: array
+    items:
+      $ref: ./servingSize.yaml
+required:
+  - sub_category_name
+  - category_name
+  - tax_name
+  - menu_serving_name
+  - kds_printer_name
+  - restaurant_id
+  - menu_name
+  - include_tax
+  - level
+  - calories
+  - is_pizza
+  - price_type
+  - description
+  - serving_size

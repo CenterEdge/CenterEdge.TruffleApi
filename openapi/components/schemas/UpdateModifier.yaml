@@ -1,0 +1,37 @@
+type: object
+properties:
+  restaurant_id:
+    description: The ID of the restaurant.
+    type: string
+    nullable: false
+  restaurant_branch_id:
+    description: The ID of the restaurant branch.
+    type: string
+    nullable: false
+  center_edge:
+    description: 
+    type: string
+    nullable: false
+  modifier_group:
+    description: The ID of the modifier group.
+    type: string
+    nullable: false
+  modifier_name:
+    description: The name of the modifier.
+    type: string
+    nullable: false
+  price:
+    description: The price of the modifier.
+    type: string
+    nullable: false
+  enabledOnly:
+    description:
+    type: boolean
+    nullable: false
+required:
+  - restaurant_id
+  - restaurant_branch_id
+  - modifier_group
+  - modifier_name
+  - price
+  - enabledOnly

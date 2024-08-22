@@ -1,0 +1,28 @@
+type: object
+properties:
+  restaurant_id:
+    description: The ID of the restaurant.
+    type: string
+    nullable: false
+  center_edge:
+    description:
+    type: string
+    nullable: true    
+  hide_in_online:
+    description:
+    type: boolean
+    nullable: false  
+  enabledOnly:
+    description:
+    type: boolean
+    nullable: false
+  modifier_group:
+    description:
+    type: string
+    nullable: false  
+required:
+  - restaurant_id
+  - center_edge
+  - hide_in_online
+  - enabledOnly
+  - modifier_group

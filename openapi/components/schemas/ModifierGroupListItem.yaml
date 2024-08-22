@@ -1,0 +1,13 @@
+type: object
+properties:
+  id:
+    description: The id of the modifier group.
+    type: integer
+    nullable: false
+  modifier_name:
+    description: The name of modifier group.
+    type: string
+    nullable: false
+required:
+  - id
+  - modifier_name     

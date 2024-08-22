@@ -3,10 +3,10 @@ properties:
   code:
     type: integer
     format: int32
-    example: 400
+    example: 200
   message:
     type: string
-    example: failed
+    example: success
 required:
   - code
   - message

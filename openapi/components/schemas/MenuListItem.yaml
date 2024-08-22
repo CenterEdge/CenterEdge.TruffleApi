@@ -1,0 +1,57 @@
+type: object
+properties:
+  id:
+    description: The id of the item.
+    type: integer
+    format: int32
+    nullable: false
+  menu_name:
+    description: The name of the item.
+    type: string
+    nullable: false
+  menu_category_name:
+    description: The category name of the item.
+    type: string
+    nullable: false
+  sub_category_name:
+    description: The subcategory name of the item.
+    type: string
+    nullable: false
+  center_edge_id:
+    description: The centeredge id of the item.
+    type: string
+    nullable: false
+  calories:
+    description: The calories of the item.
+    type: string
+    nullable: true
+  serving_size:
+    description: The list of serving sizes for the item.
+    type: array
+    items:
+      $ref: ./MenuServingSizeItem.yaml
+  level:
+    description: The calories of the item.
+    type: string
+    nullable: true
+  tax_name:
+    description: The list of taxes for the item.
+    type: array
+    items:
+      type: string
+  kitchen_printer_array:
+    description: The kitchen printer(s) the item is associated with.
+    type: array
+    items:
+      type: string
+required:
+  - id
+  - menu_name
+  - menu_category_name
+  - sub_category_name
+  - center_edge_id
+  - calories
+  - serving_size
+  - level
+  - tax_name
+  - kitchen_printer_array

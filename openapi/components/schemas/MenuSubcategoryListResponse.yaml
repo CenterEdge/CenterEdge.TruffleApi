@@ -1,0 +1,14 @@
+type: object
+properties:
+  code:
+    description: The status code of the response.
+    type: string
+    nullable: false
+  data:
+    description: The list of items.
+    type: array
+    items:
+      $ref: ./MenuSubcategoryListItem.yaml
+required:
+  - code
+  - data
