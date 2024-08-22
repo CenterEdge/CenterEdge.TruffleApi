@@ -80,7 +80,7 @@ jobs:
         path: dist
 
     - name: Build
-      run: yardarm generate -i ./dist/centeredge-truffleapi.yaml -f net6.0 netstandard2.0 --embed --nupkg ./dist/ -n CenterEdge.Truffle.Api -v ${{ needs.buildSpec.outputs.nuGetVersionV2 }} -x Yardarm.SystemTextJson Yardarm.MicrosoftExtensionsHttp --repository-url https://github.com/${GITHUB_REPOSITORY}.git --repository-commit ${GITHUB_SHA}
+      run: yardarm generate -i ./dist/centeredge-truffleapi.yaml -f net6.0 netstandard2.0 --embed --nupkg ./dist/ -n CenterEdge.TruffleApi -v ${{ needs.buildSpec.outputs.nuGetVersionV2 }} -x Yardarm.SystemTextJson Yardarm.MicrosoftExtensionsHttp --repository-url https://github.com/${GITHUB_REPOSITORY}.git --repository-commit ${GITHUB_SHA}
 
     - name: Archive
       uses: actions/upload-artifact@v4
