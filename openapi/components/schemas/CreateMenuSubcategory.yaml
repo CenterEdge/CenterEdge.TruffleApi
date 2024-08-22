@@ -7,7 +7,7 @@ properties:
   center_edge:
     description: The CenterEdge ID of the item.
     type: string
-    nullable: true
+    nullable: false
   category_name:
     description: The name of the category to which the sub-category belongs.
     type: string
@@ -15,7 +15,7 @@ properties:
   include_tax:
     description: Indicates whether tax is included.
     type: string
-    nullable: true
+    nullable: false
   sub_type_name:
     description: The name of the sub-category.
     type: string
@@ -23,7 +23,7 @@ properties:
   include_kitchen_printers:
     description: Indicates whether kitchen printers are included.
     type: string
-    nullable: true
+    nullable: false
   department_name:
     description: The name of the department.
     type: string
@@ -31,11 +31,11 @@ properties:
   tax_name:
     description: The name of the tax.
     type: string
-    nullable: true
+    nullable: false
   priority:
     description: The priority of the sub-category.
     type: string
-    nullable: true
+    nullable: false
   serving_size_level:
     description: "each"
     type: string
@@ -43,10 +43,8 @@ properties:
   kds_printer_name:
     description: The name of the kitchen display system printer.
     type: string
-    nullable: true
+    nullable: false
 required:
   - restaurant_id
+  - center_edge
   - category_name
-  - sub_type_name
-  - department_name
-  - serving_size_level

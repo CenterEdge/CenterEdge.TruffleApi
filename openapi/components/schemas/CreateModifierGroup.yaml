@@ -8,6 +8,10 @@ properties:
     description: The name of the modifier group.
     type: string
     nullable: false
+  center_edge:
+    description: The center id edge of the modifier.
+    type: string
+    nullable: false
   min:
     description: The minimum number of modifiers allowed.
     type: string
@@ -19,7 +23,7 @@ properties:
   free_modifier:
     description: how many modifiers can they get for free in this group
     type: string
-    nullable: true
+    nullable: false
   modifier_name:
     description: Comma seperated modifier names that belong in this group.
     type: string
@@ -27,6 +31,4 @@ properties:
 required:
   - restaurant_id
   - modifier_group_name
-  - min
-  - max
-  - modifier_name
+  - center_edge

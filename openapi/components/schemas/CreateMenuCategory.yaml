@@ -4,6 +4,10 @@ properties:
     description: The ID of the restaurant for which the menu category is being created.
     type: string
     nullable: false
+  center_edge:
+    description:
+    type: string
+    nullable: false
   category_name:
     description: The name of the menu category.
     type: string
@@ -11,11 +15,11 @@ properties:
   include_tax:
     description: Indicates whether tax is included in the category.
     type: string
-    nullable: true
+    nullable: false
   include_kitchen_printers:
     description: Indicates whether kitchen printers are included.
     type: string
-    nullable: true
+    nullable: false
   department_name:
     description: The name of the department.
     type: string
@@ -23,11 +27,11 @@ properties:
   tax_name:
     description: The name of the tax.
     type: string
-    nullable: true
+    nullable: false
   priority:
     description: The priority of the menu category.
     type: string
-    nullable: true
+    nullable: false
   serving_size_level:
     description: "each"
     type: string
@@ -35,9 +39,8 @@ properties:
   kds_printer_name:
     description: The name of the KDS printer.
     type: string
-    nullable: true
+    nullable: false
 required:
   - restaurant_id
+  - center_edge
   - category_name
-  - department_name
-  - serving_size_level

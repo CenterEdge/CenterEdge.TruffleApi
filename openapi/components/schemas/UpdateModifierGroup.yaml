@@ -52,11 +52,5 @@ properties:
     nullable: false
 required:
   - restaurant_id
-  - restaurant_branch_id
-  - sub_category_id
+  - center_edge
   - modifier_group_name
-  - min
-  - max
-  - free_modifier
-  - kds_printer_name
-  - include_tax

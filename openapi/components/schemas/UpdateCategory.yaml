@@ -11,7 +11,7 @@ properties:
   center_edge:
     description: 
     type: string
-    nullable: true
+    nullable: false
   category_id:
     description: The ID of the category.
     type: string
@@ -30,8 +30,5 @@ properties:
     nullable: false
 required:
   - restaurant_id
-  - restaurant_branch_id
+  - center_edge
   - category_id
-  - category_name
-  - kds_printer_name
-  - tax_name
