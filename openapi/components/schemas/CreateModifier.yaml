@@ -11,9 +11,9 @@ properties:
   price:
     description: The price of the modifier.
     type: string
-    nullable: true
+    nullable: false
   center_edge:
-    description: The center edge of the modifier.
+    description: The center id edge of the modifier.
     type: string
     nullable: false
   enabledOnly:
@@ -26,7 +26,5 @@ properties:
     nullable: false
 required:
   - restaurant_id
-  - modifier_name
   - center_edge
-  - enabledOnly
-  - modifier_group
+  - modifier_name

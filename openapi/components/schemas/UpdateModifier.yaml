@@ -30,8 +30,5 @@ properties:
     nullable: false
 required:
   - restaurant_id
-  - restaurant_branch_id
-  - modifier_group
+  - center_edge
   - modifier_name
-  - price
-  - enabledOnly

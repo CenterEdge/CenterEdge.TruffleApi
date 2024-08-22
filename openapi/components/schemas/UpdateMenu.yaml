@@ -43,7 +43,7 @@ properties:
   center_edge:
     description: 
     type: string
-    nullable: true 
+    nullable: false 
   is_pizza:
     description: 
     type: string
@@ -62,17 +62,6 @@ properties:
     items:
       $ref: ./servingSize.yaml
 required:
-  - sub_category_name
-  - category_name
-  - tax_name
-  - menu_serving_name
-  - kds_printer_name
   - restaurant_id
   - menu_name
-  - include_tax
-  - level
-  - calories
-  - is_pizza
-  - price_type
-  - description
-  - serving_size
+  - center_edge

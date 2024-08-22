@@ -3,12 +3,15 @@ properties:
   restaurant_id:
     description: The ID of the restaurant.
     type: string
-    nullable: true
+    nullable: false
   serving_name:
     description: The name of the serving
     type: string
-    nullable: true
+    nullable: false
   description:
     description: Description of the serving.
     type: string
-    nullable: true
+    nullable: false
+required:
+  - restaurant_id
+  - serving_name
