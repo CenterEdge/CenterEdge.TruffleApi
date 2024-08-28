@@ -25,31 +25,31 @@ properties:
     type: string
     nullable: false
   menu_name:
-    description: 
+    description: The name of the menu.
     type: string
     nullable: false
   include_tax:
-    description: 
+    description: Include tax in the response.
     type: string
     nullable: false
   level:
-    description: 
+    description: The level of the menu.
     type: string
     nullable: false
   calories:
-    description: 
+    description: The calories in the item.
     type: string
     nullable: false    
   center_edge:
-    description: 
+    description: The CenterEdge id.
     type: string
     nullable: false 
   is_pizza:
-    description: 
+    description: Is the item a pizza.
     type: string
     nullable: false
   price_type:
-    description: 
+    description: The price type of the menu.
     type: string
     nullable: false
   description:

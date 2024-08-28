@@ -13,7 +13,7 @@ properties:
     type: string
     nullable: false
   center_edge:
-    description: The center id edge of the modifier.
+    description: The center edge id of the modifier.
     type: string
     nullable: false
   enabledOnly:

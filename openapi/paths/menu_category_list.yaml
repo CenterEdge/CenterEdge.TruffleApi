@@ -1,14 +1,14 @@
 get:
   tags:
     - KDS
-  summary: 
-  description: 
+  summary: Gets a list of menu categories.
+  description: Gets a list of menu categories.
   operationId: menuCategoryList
   requestBody:
     content:
       application/json:
         schema:
-          $ref: '../schemas/MenuCategoryList.yaml'
+          $ref: '../components/schemas/MenuCategoryList.yaml'
     required: true
   responses:
     '200':
@@ -16,19 +16,19 @@ get:
       content:
         application/json:
           schema:
-            $ref: '../schemas/MenuCategoryListResponse.yaml'
+            $ref: '../components/schemas/MenuCategoryListResponse.yaml'
     '400':
       description: Bad Request
       content:
         application/json:
           schema:
-            $ref: '../schemas/Error.yaml'
+            $ref: '../components/schemas/Error.yaml'
     '500':
       description: Error
       content:
         application/json:
           schema:
-            $ref: '../schemas/Error.yaml'
+            $ref: '../components/schemas/Error.yaml'
             example: {
               "code": 500,
               "message": "restaurant id does not exist"

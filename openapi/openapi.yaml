@@ -16,8 +16,55 @@ tags:
       description: KDS specification
       url: https://docs.google.com/document/d/1Quf4mArWDa0-fqe8_39nMxL01D9y3pNhxyU5AqpVsn4/edit
 paths:
+  /createDepartment:
+    $ref: ./paths/departmentapi.yaml
+  /hidecategory:
+    $ref: ./paths/hide_category.yaml
+  /hideMenu:
+    $ref: ./paths/hide_menu.yaml
+  /hideModifier:
+    $ref: ./paths/hide_modifier.yaml
+  /hideModifierGroup:
+    $ref: ./paths/hide_modifiergroup.yaml
+  /hideSubcategory:
+    $ref: ./paths/hide_subcategory.yaml
   /kds_order_center:
     $ref: ./paths/kds_order_center.yaml
+  /createMenu:
+    $ref: ./paths/menu_api_center_edge.yaml
+  /menuCategoryList:
+    $ref: ./paths/menu_category_list.yaml
+  /createMenuCategory:
+    $ref: ./paths/menu_categoryapi.yaml
+  /menuList:
+    $ref: ./paths/menu_list.yaml
+  /menuSubcategoryList:
+    $ref: ./paths/menu_sub_category_list.yaml
+  /createMenuSubCategory:
+    $ref: ./paths/menu_sub_categoryapi.yaml
+  /createModifier:
+    $ref: ./paths/modifier_api.yaml
+  /createModifierGroup:
+    $ref: ./paths/modifier_group_api.yaml
+  /modifierGroupList:
+    $ref: ./paths/modifiregroupList.yaml
+  /modifierList:
+    $ref: ./paths/modifireList.yaml
+  /createServingSize:
+    $ref: ./paths/servicesizeapi.yaml
+  /createTaxes:
+    $ref: ./paths/taxesapi.yaml
+  /updateMenu:
+    $ref: ./paths/update_menu_api.yaml
+  /updateMenuCategory:
+    $ref: ./paths/update_menu_category.yaml
+  /updateMenuSubcategory:
+    $ref: ./paths/update_menu_subcategory.yaml
+  /updateModifier:
+    $ref: ./paths/update_modifier.yaml
+  /updateModifierGroup:
+    $ref: ./paths/update_modifierGroup.yaml
+  
 components:
   securitySchemes:
     bearerAuth:
