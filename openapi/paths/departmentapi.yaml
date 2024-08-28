@@ -1,6 +1,6 @@
 post:
   tags:
-    - KDS
+    - Menu Management
   summary: Creates a department.
   description: Creates a department.
   operationId: createDepartment

@@ -1,6 +1,6 @@
 post:
   tags:
-    - KDS
+    - Menu Management
   summary: Hides the modifier.
   description: Hides the modifier.
   operationId: hideModifier

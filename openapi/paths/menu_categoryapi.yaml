@@ -1,6 +1,6 @@
 post:
   tags:
-    - KDS
+    - Menu Management
   summary:  Creates a menu category.
   description:  Creates a menu category.
   operationId: createMenuCategory

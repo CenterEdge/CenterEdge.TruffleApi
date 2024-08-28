@@ -1,6 +1,6 @@
 get:
   tags:
-    - KDS
+    - Menu Management
   summary: Gets a menu subcategory list.
   description: Gets a menu subcategory list.
   operationId: menuSubcategoryList

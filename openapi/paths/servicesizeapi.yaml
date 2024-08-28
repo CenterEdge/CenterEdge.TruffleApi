@@ -1,6 +1,6 @@
 post:
   tags:
-    - KDS
+    - Menu Management
   summary: Creates a serving size.
   description: Creates a serving size.
   operationId: createServingSize

@@ -1,6 +1,6 @@
 post:
   tags:
-    - KDS
+    - Menu Management
   summary: Hides the category.
   description: Hides the category.
   operationId: hideCategory

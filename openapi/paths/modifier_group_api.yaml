@@ -1,6 +1,6 @@
 post:
   tags:
-    - KDS
+    - Menu Management
   summary: Creates a modifier group.
   description: Creates a modifier group.
   operationId: createModifierGroup

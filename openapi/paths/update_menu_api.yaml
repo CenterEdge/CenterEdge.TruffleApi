@@ -1,6 +1,6 @@
 post:
   tags:
-    - KDS
+    - Menu Management
   summary: Updates an existing menu.
   description: Updates an existing menu.
   operationId: updateMenu

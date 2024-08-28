@@ -15,6 +15,8 @@ tags:
     externalDocs:
       description: KDS specification
       url: https://docs.google.com/document/d/1Quf4mArWDa0-fqe8_39nMxL01D9y3pNhxyU5AqpVsn4/edit
+  - name: Menu Management
+    description: API for managing the menu systems
 paths:
   /createDepartment:
     $ref: ./paths/departmentapi.yaml
