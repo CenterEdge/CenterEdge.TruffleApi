@@ -1,6 +1,6 @@
 post:
   tags:
-    - KDS
+    - Menu Management
   summary: Hides the menu.
   description: Hides the menu.
   operationId: hideMenu

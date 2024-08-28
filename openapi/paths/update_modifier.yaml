@@ -1,6 +1,6 @@
 post:
   tags:
-    - KDS
+    - Menu Management
   summary: Updates an existing modifier.
   description: Updates an existing modifier.
   operationId: updateModifier

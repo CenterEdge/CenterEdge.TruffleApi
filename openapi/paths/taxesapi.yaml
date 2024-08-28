@@ -1,6 +1,6 @@
 post:
   tags:
-    - KDS
+    - Menu Management
   summary: Creates a tax.
   description:  Creates a tax.
   operationId: createTaxes
