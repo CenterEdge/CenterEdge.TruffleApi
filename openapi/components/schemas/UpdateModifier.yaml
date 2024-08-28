@@ -9,7 +9,7 @@ properties:
     type: string
     nullable: false
   center_edge:
-    description: 
+    description: The CenterEdge id.
     type: string
     nullable: false
   modifier_group:
@@ -25,7 +25,7 @@ properties:
     type: string
     nullable: false
   enabledOnly:
-    description:
+    description: Is the modifier enabled.
     type: boolean
     nullable: false
 required:

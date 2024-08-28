@@ -5,7 +5,7 @@ properties:
     type: string
     nullable: false
   center_edge:
-    description:
+    description: The CenterEdge id.
     type: string
     nullable: false
   category_name:

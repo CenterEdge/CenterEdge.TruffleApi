@@ -9,11 +9,11 @@ properties:
     type: string
     nullable: false
   center_edge:
-    description: 
+    description: The CenterEdge id.
     type: string
     nullable: true
   hide_in_online:
-    description:
+    description: Hide online.
     type: boolean
     nullable: false
 required:

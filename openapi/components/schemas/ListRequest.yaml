@@ -9,12 +9,12 @@ properties:
     type: string
     nullable: false
   page_no:
-    description: 
+    description: The page number.
     type: integer
     format: int32
     nullable: false    
   limit:
-    description:
+    description: Max items to return.
     type: integer
     format: int32
     nullable: false

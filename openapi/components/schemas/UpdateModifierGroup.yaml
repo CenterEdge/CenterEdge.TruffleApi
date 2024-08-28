@@ -13,7 +13,7 @@ properties:
     type: string
     nullable: false
   center_edge:
-    description: 
+    description: The CenterEdge id.
     type: string
     nullable: false
   modifier_group_name:
@@ -29,17 +29,17 @@ properties:
     type: string
     nullable: false
   min:
-    description:
-    type: float
+    description: The min of the modifier group.
+    type: number
     format: decimal
     nullable: false
   max:
-    description:
-    type: float
+    description: The max of the modifier group.
+    type: number
     format: decimal
     nullable: false
   free_modifier:
-    description:
+    description: Is this a free modifier.
     type: string
     nullable: false
   kds_printer_name:
@@ -47,7 +47,7 @@ properties:
     type: string
     nullable: false
   include_tax:
-    description:
+    description: Include tax in the response.
     type: boolean
     nullable: false
 required:

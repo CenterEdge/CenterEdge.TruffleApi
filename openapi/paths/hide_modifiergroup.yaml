@@ -1,14 +1,14 @@
 post:
   tags:
     - KDS
-  summary: 
-  description: 
+  summary: Hides the modifier group
+  description: Hides the modifier group
   operationId: hideModifierGroup
   requestBody:
     content:
       application/json:
         schema:
-          $ref: '../schemas/hideModifierGroup.yaml'
+          $ref: '../components/schemas/HideModifierGroup.yaml'
     required: true
   responses:
     '200':
@@ -16,22 +16,22 @@ post:
       content:
         application/json:
           schema:
-            $ref: '../schemas/BaseResponse.yaml'
+            $ref: '../components/schemas/BaseResponse.yaml'
     '400':
       description: Bad Request
       content:
         application/json:
           schema:
-            $ref: '../schemas/Error.yaml'
+            $ref: '../components/schemas/Error.yaml'
     '500':
       description: Error
       content:
         application/json:
           schema:
-            $ref: '../schemas/Error.yaml'
+            $ref: '../components/schemas/Error.yaml'
             example: {
               "code": 500,
-              "message": "restaurant id does not exist"
+              "message": "modifier group id does not exist"
             }
   security:
     - bearerAuth: []

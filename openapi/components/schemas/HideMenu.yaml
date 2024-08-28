@@ -5,19 +5,19 @@ properties:
     type: string
     nullable: false
   center_edge:
-    description:
+    description: The CenterEdge id.
     type: string
     nullable: true    
   hide_in_online:
-    description:
+    description: Hide menu online.
     type: boolean
     nullable: false  
   enabledOnly:
-    description:
+    description: Menu is enabled.
     type: boolean
     nullable: false
   modifier_group:
-    description:
+    description: Modifier group of the menu,
     type: string
     nullable: false  
 required:
