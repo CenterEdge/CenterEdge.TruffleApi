@@ -63,7 +63,7 @@ paths:
   /updateModifier:
     $ref: ./paths/update_modifier.yaml
   /updateModifierGroup:
-    $ref: ./paths/update_modifierGroup.yaml
+    $ref: ./paths/update_modifiergroup.yaml
   
 components:
   securitySchemes:

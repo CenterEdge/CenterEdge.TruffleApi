@@ -60,7 +60,7 @@ properties:
     description: List of serving sizes.
     type: array
     items:
-      $ref: ./servingSize.yaml
+      $ref: ./ServingSize.yaml
 required:
   - restaurant_id
   - menu_name
