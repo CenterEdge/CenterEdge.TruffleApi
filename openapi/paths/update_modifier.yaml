@@ -8,7 +8,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/updateModifier.yaml'
+          $ref: '../components/schemas/UpdateModifier.yaml'
     required: true
   responses:
     '200':

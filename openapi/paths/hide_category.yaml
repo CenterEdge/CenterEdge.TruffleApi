@@ -8,7 +8,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/hideCategory.yaml'
+          $ref: '../components/schemas/HideCategory.yaml'
     required: true
   responses:
     '200':

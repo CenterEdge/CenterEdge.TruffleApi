@@ -8,7 +8,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/updateMenu.yaml'
+          $ref: '../components/schemas/UpdateMenu.yaml'
     required: true
   responses:
     '200':

@@ -8,7 +8,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/createServingSize.yaml'
+          $ref: '../components/schemas/CreateServingSize.yaml'
     required: true
   responses:
     '200':

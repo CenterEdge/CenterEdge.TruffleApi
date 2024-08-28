@@ -8,7 +8,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/createModifierGroup.yaml'
+          $ref: '../components/schemas/CreateModifierGroup.yaml'
     required: true
   responses:
     '200':
