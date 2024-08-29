@@ -18,55 +18,54 @@ tags:
   - name: Menu Management
     description: API for managing the menu systems
 paths:
-  /createDepartment:
+  /departmentapi:
     $ref: ./paths/departmentapi.yaml
-  /hidecategory:
+  /hide_category:
     $ref: ./paths/hide_category.yaml
-  /hideMenu:
+  /hide_menu:
     $ref: ./paths/hide_menu.yaml
-  /hideModifier:
+  /hide_modifier:
     $ref: ./paths/hide_modifier.yaml
-  /hideModifierGroup:
+  /hide_modifiergroup:
     $ref: ./paths/hide_modifiergroup.yaml
-  /hideSubcategory:
+  /hide_subcategory:
     $ref: ./paths/hide_subcategory.yaml
   /kds_order_center:
     $ref: ./paths/kds_order_center.yaml
-  /createMenu:
+  /menu_api_center_edge:
     $ref: ./paths/menu_api_center_edge.yaml
-  /menuCategoryList:
+  /menu_category_list:
     $ref: ./paths/menu_category_list.yaml
-  /createMenuCategory:
+  /menu_categoryapi:
     $ref: ./paths/menu_categoryapi.yaml
-  /menuList:
+  /menu_list:
     $ref: ./paths/menu_list.yaml
-  /menuSubcategoryList:
+  /menu_sub_category_list:
     $ref: ./paths/menu_sub_category_list.yaml
-  /createMenuSubCategory:
+  /menu_sub_categoryapi:
     $ref: ./paths/menu_sub_categoryapi.yaml
-  /createModifier:
+  /modifier_api:
     $ref: ./paths/modifier_api.yaml
-  /createModifierGroup:
+  /modifier_group_api:
     $ref: ./paths/modifier_group_api.yaml
-  /modifierGroupList:
+  /modifiregroupList:
     $ref: ./paths/modifiregroupList.yaml
-  /modifierList:
+  /modifireList:
     $ref: ./paths/modifireList.yaml
-  /createServingSize:
+  /servicesizeapi:
     $ref: ./paths/servicesizeapi.yaml
-  /createTaxes:
+  /taxesapi:
     $ref: ./paths/taxesapi.yaml
-  /updateMenu:
+  /update_menu_api:
     $ref: ./paths/update_menu_api.yaml
-  /updateMenuCategory:
+  /update_menu_category:
     $ref: ./paths/update_menu_category.yaml
-  /updateMenuSubcategory:
+  /update_menu_subcategory:
     $ref: ./paths/update_menu_subcategory.yaml
-  /updateModifier:
+  /update_modifier:
     $ref: ./paths/update_modifier.yaml
-  /updateModifierGroup:
-    $ref: ./paths/update_modifiergroup.yaml
-  
+  /update_modifiergroup:
+    $ref: ./paths/update_modifiergroup.yaml  
 components:
   securitySchemes:
     bearerAuth:
