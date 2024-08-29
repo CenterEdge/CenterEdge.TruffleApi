@@ -14,12 +14,14 @@ properties:
     nullable: false
   include_tax:
     description: Indicates whether tax is included in the category.
-    type: boolean
+    type: string
     nullable: false
+    example: On
   include_kitchen_printers:
     description: Indicates whether kitchen printers are included.
-    type: boolean
+    type: string
     nullable: false
+    example: On
   department_name:
     description: The name of the department.
     type: string
