@@ -59,7 +59,9 @@ properties:
   serving_size:
     description: Array of serving size objects with name, serving_price, serving_cost, and serving_discount.
     type: array
-    nullable: false
+    nullable: false 
+    items: 
+      $ref: './ServingSize.yaml'
 required:
   - restaurant_id
   - center_edge
