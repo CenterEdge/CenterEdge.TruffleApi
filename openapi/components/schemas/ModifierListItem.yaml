@@ -19,6 +19,10 @@ properties:
     type: array
     items:
       type: string
+  center_edge:
+    description: The CenterEdge id.
+    type: string
+    nullable: true
 required:
   - id
   - modifier_name

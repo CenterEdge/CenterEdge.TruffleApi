@@ -8,6 +8,10 @@ properties:
     description: The name of modifier group.
     type: string
     nullable: false
+  center_edge:
+    description: The CenterEdge id.
+    type: string
+    nullable: true
 required:
   - id
   - modifier_name     
