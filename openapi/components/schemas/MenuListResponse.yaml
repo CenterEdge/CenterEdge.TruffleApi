@@ -2,7 +2,8 @@ type: object
 properties:
   code:
     description: The status code of the response.
-    type: string
+    type: number
+    format: int32
     nullable: false
   data:
     description: The list of items.
