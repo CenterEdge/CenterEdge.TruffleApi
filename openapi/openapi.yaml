@@ -44,8 +44,8 @@ paths:
     $ref: ./paths/menu_sub_category_list.yaml
   /menu_sub_categoryapi:
     $ref: ./paths/menu_sub_categoryapi.yaml
-  /modifier_api:
-    $ref: ./paths/modifier_api.yaml
+  /modifierapi:
+    $ref: ./paths/modifierapi.yaml
   /modifier_group_api:
     $ref: ./paths/modifier_group_api.yaml
   /modifiregroupList:
