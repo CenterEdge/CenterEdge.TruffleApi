@@ -23,7 +23,7 @@ properties:
   modifier_group:
     description: The group to which the modifier belongs.
     type: string
-    nullable: false
+    nullable: true
 required:
   - restaurant_id
   - center_edge
