@@ -8,24 +8,20 @@ properties:
     description: The ID of the restaurant branch.
     type: string
     nullable: false
-  sub_category_id:
-    description: The ID of the subcategory.
-    type: string
-    nullable: false
   center_edge:
     description: The CenterEdge id.
     type: string
     nullable: false
   modifier_group_name:
-    description: The name of the modifier group.
+    description: The name of this modifier group.
     type: string
     nullable: false
   modifier_group:
-    description: The ID of the modifier group.
+    description: The ID of the parent modifier group.
     type: string
     nullable: false
   modifier_name:
-    description: The name of the modifier group.
+    description: The names of the modifiers in this group.
     type: string
     nullable: false
   min:
@@ -43,12 +39,16 @@ properties:
     type: string
     nullable: false
   kds_printer_name:
-    description: The name of the printer.
+    description: The name(s) of the printer(s).
     type: string
     nullable: false
   include_tax:
-    description: Include tax in the response.
+    description: Include tax(es) in the response.
     type: boolean
+    nullable: false
+  tax_name:
+    description: The name of the tax(es).
+    type: string
     nullable: false
 required:
   - restaurant_id
