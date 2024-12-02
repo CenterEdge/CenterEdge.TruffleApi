@@ -44,10 +44,12 @@ properties:
     description: The CenterEdge id.
     type: string
     nullable: false
+  out_stock:
+    description: If the product is out of stock.
+    $ref: './YesNoValue.yaml'
   is_pizza:
     description: Indicates whether the menu item is a pizza.
-    type: string
-    nullable: false
+    $ref: './YesNoValue.yaml'
   price_type:
     description: always send as "fixed"
     type: string
@@ -56,6 +58,12 @@ properties:
     description: Description of the menu.
     type: string
     nullable: false
+  modifier_group:
+    description: Array of modifier group references in order of display.
+    type: array
+    nullable: false
+    items:
+      $ref: './ModifierGroupReference.yaml'
   serving_size:
     description: Array of serving size objects with name, serving_price, serving_cost, and serving_discount.
     type: array
