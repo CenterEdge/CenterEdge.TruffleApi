@@ -1,0 +1,18 @@
+type: object
+properties:
+  Modi_group_id: 
+    description: The ID or CenterEdge ID of the modifier group.
+    type: string
+    nullable: false
+  toppings:
+    $ref: './ToppingType.yaml'
+  defaults:
+    description: IDs or CenterEdge IDs of modifiers in the group which are selected by default. Only applies to Optional topping types.
+    type: array
+    items:
+      type: string
+    nullable: false
+required:
+  - Modi_group_id
+  - toppings
+nullable: false

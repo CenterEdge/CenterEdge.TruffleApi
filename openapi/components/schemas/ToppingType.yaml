@@ -1,0 +1,7 @@
+description: The topping type.
+type: string
+enum:
+  - Required
+  - Optional
+  - Included
+nullable: false
