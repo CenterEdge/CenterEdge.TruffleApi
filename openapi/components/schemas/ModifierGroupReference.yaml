@@ -1,6 +1,6 @@
 type: object
 properties:
-  Modi_group_id: 
+  Modi_grp_id: 
     description: The ID or CenterEdge ID of the modifier group.
     type: string
     nullable: false
@@ -13,6 +13,6 @@ properties:
       type: string
     nullable: false
 required:
-  - Modi_group_id
+  - Modi_grp_id
   - toppings
 nullable: false
