@@ -24,8 +24,8 @@ properties:
     description: Indicates whether kitchen printers are included.
     type: string
     nullable: false
-  department_name:
-    description: The name of the department.
+  department_id:
+    description: The id of the department.
     type: string
     nullable: false
   tax_name:
