@@ -24,6 +24,10 @@ properties:
     description: The group to which the modifier belongs.
     type: string
     nullable: true
+  tax_name:
+    description: Name of the tax group(s) for this modifier.
+    type: string
+    nullable: true
 required:
   - restaurant_id
   - center_edge
