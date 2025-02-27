@@ -57,7 +57,7 @@ properties:
   description:
     description: Description of the menu.
     type: string
-    nullable: false
+    nullable: true
   modifier_group:
     description: Array of modifier group references in order of display.
     type: array
