@@ -4,4 +4,5 @@ enum:
   - Full
   - Left
   - Right
-default: Full
+default: null
+nullable: true
