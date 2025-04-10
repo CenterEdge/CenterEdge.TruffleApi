@@ -10,7 +10,6 @@ properties:
     example: Ketchup
   modifier_type:
     $ref: ./ModifierType.yaml
-    nullable: true
   quantity:
     description: The quantity of the modifier applied.
     type: number
